@@ -26,3 +26,10 @@ h1,h6{
 .poplogo{
     height: 2rem;
 }
+.active {
+    border: 0.3rem solid rgb(218, 46, 46);
+    border-left: white;
+    border-top: white;
+    border-right: white;
+    padding-bottom: 0.15rem;
+  }
