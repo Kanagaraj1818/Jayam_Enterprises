@@ -15,7 +15,28 @@
         </div>
         <div class="navbar pad position-absolute top-0 end-0">
             <button class="btn btn-primary">SignUp</button>
-            <button class="btn btn-danger">Login</button>
+            <button class="btn btn-danger" (click)="loginPopup = true">Login</button>
         </div>
     </nav>
 </header>
+
+<div class="modal" tabindex="-1" [ngClass]="{ show: loginPopup }" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header navbar background">
+            <img src="..\..\..\..\assets\logo.jpg" alt="logo" class="poplogo">
+          <h5 class="modal-title">LOGIN</h5>
+          <button type="button" class="close btn" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" (click)="loginPopup = false">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Modal body text goes here.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
