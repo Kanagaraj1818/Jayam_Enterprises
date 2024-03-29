@@ -3,7 +3,7 @@
     <div class="container" *ngIf="service.electronicServices as list1">
         <div class="row">
             <div class="col-sm" *ngFor="let services of list1.services">
-            <div class="card btn">
+            <div class="card">
                 <div class="pad">
                     <img [src]="services.img" alt=""> 
                     <span class="name">{{services.name}}  </span>    
@@ -16,7 +16,7 @@
       <div class="container" *ngIf="service.completeHomeServices1 as list">
         <div class="row">
           <div class="col-sm" *ngFor="let services of list.services">
-            <div class="card btn">
+            <div class="card">
                 <div class="pad">
                     <img [src]="services.img" alt=""> 
                     <span class="name">{{services.name}}  </span>    
@@ -28,7 +28,7 @@
       <div class="container" *ngIf="service.completeHomeServices2 as list">
         <div class="row">
           <div class="col-sm" *ngFor="let services of list.services">
-            <div class="card btn">
+            <div class="card">
                 <div class="pad">
                     <img [src]="services.img" alt=""> 
                     <span class="name">{{services.name}}  </span>    
@@ -40,7 +40,7 @@
       <div class="container" *ngIf="service.consultancyServices as list">
         <div class="row">
           <div class="col-sm">
-            <div class="card btn">
+            <div class="card">
                 <div class="pad">
                     <img [src]="list.img" alt=""> 
                     <span class="name">{{list.name}}  </span>    

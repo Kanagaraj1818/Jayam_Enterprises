@@ -7,8 +7,7 @@ img{
     padding-right: 1rem;
 }
 .pad{
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding: 1rem;
 }
 body{
     background-color:aliceblue;
@@ -22,3 +21,6 @@ body{
     font-size: large;
     font-weight: bold;
 }
+.card:hover {
+    background-color:antiquewhite;
+  }
