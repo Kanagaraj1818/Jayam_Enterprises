@@ -9,44 +9,44 @@ export class HomeService {
   electronicServices:ServicesList = 
     {services:[{
     name:"Electrical Service",
-    img:"https://cdn-icons-png.flaticon.com/512/8734/8734819.png"
+    img:"..\\..\\..\\..\\assets\\compressed\\electrician.svg"
   },{
     name:"A/C Service",
-    img:"https://cdn-icons-png.flaticon.com/128/4752/4752795.png"
+    img:"..\\..\\..\\..\\assets\\compressed\\ac.svg"
   },{
     name:"Washing M/C Service",
-    img:"https://cdn-icons-png.flaticon.com/128/4003/4003447.png"
+    img:"..\\..\\..\\..\\assets\\compressed\\washing.svg"
   },{
     name:"Refrigirator Service",
-    img:"https://cdn-icons-png.flaticon.com/128/11252/11252671.png"
+    img:"..\\..\\..\\..\\assets\\compressed\\fridge.svg"
   }]};
   completeHomeServices1:ServicesList ={
     services:[{
       name:"Plumbing Service",
-      img:"https://cdn-icons-png.flaticon.com/128/12029/12029477.png"
+      img:"..\\..\\..\\..\\assets\\compressed\\plumbing.svg"
     },{
       name:"Carpenter Service",
-      img:"https://cdn-icons-png.flaticon.com/128/360/360484.png"
+      img:"..\\..\\..\\..\\assets\\compressed\\carpenter.svg"
     },{
       name:"CCTV Installation/Service",
-      img:"https://cdn-icons-png.flaticon.com/128/10205/10205839.png"
+      img:"..\\..\\..\\..\\assets\\compressed\\cctv.svg"
     }]
   }
   completeHomeServices2:ServicesList ={
     services:[{
       name:"Civil Work",
-      img:"https://cdn-icons-png.flaticon.com/128/9408/9408188.png"
+      img:"..\\..\\..\\..\\assets\\compressed\\civil.svg"
     },{
       name:"Welding Service",
-      img:"https://cdn-icons-png.flaticon.com/128/10342/10342223.png"
+      img:"..\\..\\..\\..\\assets\\compressed\\welding.svg"
     },{
       name:"Painter Service",
-      img:"https://cdn-icons-png.flaticon.com/128/1995/1995491.png"
+      img:"..\\..\\..\\..\\assets\\compressed\\painter.svg"
     }]
   }
   consultancyServices:Services={
     name:"Consultancy Services",
-    img:"https://cdn-icons-png.flaticon.com/128/12885/12885376.png"
+    img:"..\\..\\..\\..\\assets\\compressed\\consultancy.svg"
   }
   constructor() { }
   
