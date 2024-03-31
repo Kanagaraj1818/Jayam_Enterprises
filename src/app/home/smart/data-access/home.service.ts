@@ -8,28 +8,36 @@ export class HomeService {
 
   electronicServices:ServicesList = 
     {services:[{
-    name:"Electrical Service",
-    img:"..\\..\\..\\..\\assets\\compressed\\electrician.svg"
-  },{
-    name:"A/C Service",
+    name:"A/C Repair",
     img:"..\\..\\..\\..\\assets\\compressed\\ac.svg"
   },{
-    name:"Washing M/C Service",
+    name:"Washing M/C Repair",
     img:"..\\..\\..\\..\\assets\\compressed\\washing.svg"
   },{
-    name:"Refrigirator Service",
+    name:"Refrigirator Repair",
     img:"..\\..\\..\\..\\assets\\compressed\\fridge.svg"
   }]};
+  electronicServices1:ServicesList = {
+    services:[
+      {
+        name:"Electrician",
+        img:"..\\..\\..\\..\\assets\\compressed\\electrician.svg"
+      },{
+        name:"CCTV Installation/Service",
+        img:"..\\..\\..\\..\\assets\\compressed\\cctv.svg"
+      }
+    ]
+  }
   completeHomeServices1:ServicesList ={
     services:[{
-      name:"Plumbing Service",
+      name:"Plumber",
       img:"..\\..\\..\\..\\assets\\compressed\\plumbing.svg"
     },{
-      name:"Carpenter Service",
+      name:"Carpenter",
       img:"..\\..\\..\\..\\assets\\compressed\\carpenter.svg"
     },{
-      name:"CCTV Installation/Service",
-      img:"..\\..\\..\\..\\assets\\compressed\\cctv.svg"
+      name:"Painter",
+      img:"..\\..\\..\\..\\assets\\compressed\\painter.svg"
     }]
   }
   completeHomeServices2:ServicesList ={
@@ -37,11 +45,8 @@ export class HomeService {
       name:"Civil Work",
       img:"..\\..\\..\\..\\assets\\compressed\\civil.svg"
     },{
-      name:"Welding Service",
+      name:"Steel Work",
       img:"..\\..\\..\\..\\assets\\compressed\\welding.svg"
-    },{
-      name:"Painter Service",
-      img:"..\\..\\..\\..\\assets\\compressed\\painter.svg"
     }]
   }
   consultancyServices:Services={

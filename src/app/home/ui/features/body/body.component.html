@@ -1,20 +1,31 @@
 <body>
-
-    <div class="container" *ngIf="service.electronicServices as list1">
-        <div class="row">
+    <div class="container">
+      <h3>A Complete Home Service in your Town</h3>
+      <h5>Electrical and Electronic Repairs</h5>
+        <div class="row" *ngIf="service.electronicServices as list1">
             <div class="col-sm" *ngFor="let services of list1.services">
-            <div class="card" (click)="selectedCatagory(services.name)">
-                <div class="pad">
-                    <img [src]="services.img" alt=""> 
-                    <span class="name">{{services.name}}</span>    
-                </div>
-            </div>
-        </div>
+              <div class="card" (click)="selectedCatagory(services.name)">
+                  <div class="pad">
+                      <img [src]="services.img" alt=""> 
+                      <span class="name">{{services.name}}</span>    
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="row" *ngIf="service.electronicServices1 as list1">
+        <div class="col-sm" *ngFor="let services of list1.services">
+          <div class="card" (click)="selectedCatagory(services.name)">
+              <div class="pad">
+                  <img [src]="services.img" alt=""> 
+                  <span class="name">{{services.name}}</span>    
+              </div>
+          </div>
+      </div>
+  </div>
     </div>
-    
-    </div>
-      <div class="container" *ngIf="service.completeHomeServices1 as list">
-        <div class="row">
+      <div class="container">
+        <h5>House Repair</h5>
+        <div class="row" *ngIf="service.completeHomeServices1 as list">
           <div class="col-sm" *ngFor="let services of list.services">
             <div class="card">
                 <div class="pad">
@@ -24,9 +35,7 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="container" *ngIf="service.completeHomeServices2 as list">
-        <div class="row">
+        <div class="row" *ngIf="service.completeHomeServices2 as list">
           <div class="col-sm" *ngFor="let services of list.services">
             <div class="card">
                 <div class="pad">
@@ -38,6 +47,7 @@
         </div>
       </div>
       <div class="container" *ngIf="service.consultancyServices as list">
+        <h5>We Providing Consultancy Service For Entire House</h5>
         <div class="row">
           <div class="col-sm">
             <div class="card">
