@@ -1,2 +1,7 @@
 <app-header></app-header>
+<body>
+    <div *ngIf="service.currentCatogory$ | async as catogory">
+        {{catogory}}
+    </div>
+</body>
 <app-footer></app-footer>
