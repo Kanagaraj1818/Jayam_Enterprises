@@ -58,10 +58,17 @@ export class HomeService {
   currentCatogory$:Observable<string>;
   constructor(private router:Router) {
     this.currentCatogory$ = new BehaviorSubject('');
+    if(sessionStorage.getItem('catogory')){
+      let catogory =  sessionStorage.getItem('catogory');
+      if(catogory)
+      this.currentCatogory$ = new BehaviorSubject(catogory);
+    }
+    else router.navigateByUrl('/home');
    }
 
   selectedCatagory(value:string):void{
     this.currentCatogory$ = new BehaviorSubject(value);
+    sessionStorage.setItem('catogory', value);
     this.router.navigateByUrl("/order-summary");
   }
 }
