@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Services, ServicesList } from './body-interface';
+import { Router } from '@angular/router';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -53,6 +55,20 @@ export class HomeService {
     name:"Consultancy Services",
     img:"..\\..\\..\\..\\assets\\compressed\\consultancy.svg"
   }
-  constructor() { }
-  
+  currentCatogory$:Observable<string>;
+  constructor(private router:Router) {
+    this.currentCatogory$ = new BehaviorSubject('');
+    if(sessionStorage.getItem('catogory')){
+      let catogory =  sessionStorage.getItem('catogory');
+      if(catogory)
+      this.currentCatogory$ = new BehaviorSubject(catogory);
+    }
+    else router.navigateByUrl('/home');
+   }
+
+  selectedCatagory(value:string):void{
+    this.currentCatogory$ = new BehaviorSubject(value);
+    sessionStorage.setItem('catogory', value);
+    this.router.navigateByUrl("/order-summary");
+  }
 }

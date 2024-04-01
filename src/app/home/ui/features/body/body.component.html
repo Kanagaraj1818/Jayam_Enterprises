@@ -27,7 +27,7 @@
         <h5>House Repair</h5>
         <div class="row" *ngIf="service.completeHomeServices1 as list">
           <div class="col-sm" *ngFor="let services of list.services">
-            <div class="card">
+            <div class="card" (click)="selectedCatagory(services.name)">
                 <div class="pad">
                     <img [src]="services.img" alt=""> 
                     <span class="name">{{services.name}}  </span>    
@@ -37,7 +37,7 @@
         </div>
         <div class="row" *ngIf="service.completeHomeServices2 as list">
           <div class="col-sm" *ngFor="let services of list.services">
-            <div class="card">
+            <div class="card" (click)="selectedCatagory(services.name)">
                 <div class="pad">
                     <img [src]="services.img" alt=""> 
                     <span class="name">{{services.name}}  </span>    
@@ -50,7 +50,7 @@
         <h5>We Providing Consultancy Service For Entire House</h5>
         <div class="row">
           <div class="col-sm">
-            <div class="card">
+            <div class="card" (click)="selectedCatagory(list.name)">
                 <div class="pad">
                     <img [src]="list.img" alt=""> 
                     <span class="name">{{list.name}}  </span>    

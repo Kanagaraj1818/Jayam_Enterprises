@@ -11,8 +11,8 @@ import { Router, RouterModule } from '@angular/router';
   styleUrl: './body.component.scss'
 })
 export class BodyComponent {
-  constructor(public service:HomeService,private router:Router){}
+  constructor(public service:HomeService){}
   selectedCatagory(selectedService:string):void{
-    this.router.navigateByUrl("/order-summary");
+    this.service.selectedCatagory(selectedService);
   }
 }
