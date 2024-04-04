@@ -4,30 +4,52 @@
 }
 img{
     height: 3rem;
-    padding-right: 1rem;
 }
 .pad{
     padding: 1rem;
+    backdrop-filter: blur(10px);
 }
 .row{
     padding: 1rem;
 }
-body{
-    background-color:aliceblue;
-}
+
 .card{
-    background-color:rgb(240, 240, 240);
+    background-color:black;
     cursor: pointer;
     color: rgba(1,160,254,255);;
+    height: 15rem;
 }
 .name{
     font-size: large;
     font-weight: bold;
+    color:beige;
 }
 .card:hover {
-    background-color:antiquewhite;
+  transform: scale(1.1);
   }
   h3,h5{
     padding-left: 1rem;
     color: rgba(0, 0, 0, 0.578);
+  }
+  .pic{
+    padding-top: 0.5rem;
+  }
+  .container {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+  
+  /* Bottom left text */
+  .bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+  }
+  
+  .padd{
+    padding-right: 1rem;
+  }
+  .color{
+    color: antiquewhite;
   }
