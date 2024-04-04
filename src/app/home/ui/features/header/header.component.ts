@@ -10,6 +10,6 @@ import { Router, RouterModule } from '@angular/router';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  loginPopup: boolean = false;
+  // loginPopup: boolean = false;
   constructor(public router:Router) { }
 }

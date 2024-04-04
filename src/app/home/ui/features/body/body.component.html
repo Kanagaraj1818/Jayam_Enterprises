@@ -1,60 +1,80 @@
-<body>
+<body class="bg-dark">
     <div class="container">
-      <h3>A Complete Home Service in your Town</h3>
-      <h5>Electrical and Electronic Repairs</h5>
+      <h3 class="color d-flex justify-content-left">A COMPLETE HOME SERVICE IN YOUR TOWN</h3>
+      <h5 class="color d-flex justify-content-left">Electrical and Electronic Repairs</h5>
         <div class="row" *ngIf="service.electronicServices as list1">
-            <div class="col-sm" *ngFor="let services of list1.services">
+            <div class="col-sm pic" *ngFor="let services of list1.services">
               <div class="card" (click)="selectedCatagory(services.name)">
+                <img [src]="services.background" alt="Snow" style="width:100%
+                ; height:100%">
+                <div class="bottom-left">
                   <div class="pad">
-                      <img [src]="services.img" alt=""> 
-                      <span class="name">{{services.name}}</span>    
-                  </div>
+                    <img [src]="services.img" alt=""> 
+                    <span class="name">{{services.name}}</span>    
+                </div>
+                </div>
               </div>
           </div>
       </div>
       <div class="row" *ngIf="service.electronicServices1 as list1">
-        <div class="col-sm" *ngFor="let services of list1.services">
+        <div class="col-sm pic" *ngFor="let services of list1.services">
           <div class="card" (click)="selectedCatagory(services.name)">
+            <img [src]="services.background" alt="Snow" style="width:100%
+            ; height:100%">
+            <div class="bottom-left">
               <div class="pad">
-                  <img [src]="services.img" alt=""> 
-                  <span class="name">{{services.name}}</span>    
-              </div>
+                <img [src]="services.img" alt=""> 
+                <span class="name">{{services.name}}</span>    
+            </div>
+            </div>
           </div>
       </div>
   </div>
     </div>
       <div class="container">
-        <h5>House Repair</h5>
+        <h5 class="color d-flex justify-content-left">House Repair</h5>
         <div class="row" *ngIf="service.completeHomeServices1 as list">
-          <div class="col-sm" *ngFor="let services of list.services">
+          <div class="col-sm pic" *ngFor="let services of list.services">
             <div class="card" (click)="selectedCatagory(services.name)">
+              <img [src]="services.background" alt="Snow" style="width:100%
+              ; height:100%">
+              <div class="bottom-left">
                 <div class="pad">
-                    <img [src]="services.img" alt=""> 
-                    <span class="name">{{services.name}}  </span>    
-                </div>
+                  <img [src]="services.img" alt=""> 
+                  <span class="name">{{services.name}}</span>    
+              </div>
+              </div>
             </div>
           </div>
         </div>
         <div class="row" *ngIf="service.completeHomeServices2 as list">
-          <div class="col-sm" *ngFor="let services of list.services">
+          <div class="col-sm pic" *ngFor="let services of list.services">
             <div class="card" (click)="selectedCatagory(services.name)">
+              <img [src]="services.background" alt="Snow" style="width:100%
+              ; height:100%">
+              <div class="bottom-left">
                 <div class="pad">
-                    <img [src]="services.img" alt=""> 
-                    <span class="name">{{services.name}}  </span>    
-                </div>
+                  <img [src]="services.img" alt=""> 
+                  <span class="name">{{services.name}}</span>    
+              </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div class="container" *ngIf="service.consultancyServices as list">
-        <h5>We Providing Consultancy Service For Entire House</h5>
+        <h5 class="color d-flex justify-content-left">We Providing Consultancy Service For Entire House</h5>
         <div class="row">
-          <div class="col-sm">
+          <div class="col-sm pic">
             <div class="card" (click)="selectedCatagory(list.name)">
+              <img [src]="list.background" alt="Snow" style="width:100%
+              ; height:100%">
+              <div class="bottom-left">
                 <div class="pad">
-                    <img [src]="list.img" alt=""> 
-                    <span class="name">{{list.name}}  </span>    
-                </div>
+                  <img [src]="list.img" alt=""> 
+                  <span class="name">{{list.name}}</span>    
+              </div>
+              </div>
             </div>
           </div>
         </div>
