@@ -1,16 +1,10 @@
-.container{
-    padding-top: 2rem;
-    
-}
+
 img{
     height: 3rem;
 }
 .pad{
     padding: 1rem;
     backdrop-filter: blur(10px);
-}
-.row{
-    padding: 1rem;
 }
 
 .card{
@@ -56,3 +50,6 @@ img{
   p{
     font-weight:bold;
   }
+ body{
+  padding: 1rem;
+ }

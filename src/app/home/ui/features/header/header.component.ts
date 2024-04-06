@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
+import { HomeService } from '../../../smart/data-access/home.service';
 
 @Component({
   selector: 'app-header',
@@ -11,5 +12,8 @@ import { Router, RouterModule } from '@angular/router';
 })
 export class HeaderComponent {
   // loginPopup: boolean = false;
-  constructor(public router:Router) { }
+  constructor(public router:Router,private service : HomeService) { }
+  onKey(event:any){
+    this.service.onKey(event.target.value);
+  }
 }

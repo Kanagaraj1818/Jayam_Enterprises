@@ -12,10 +12,8 @@ import { HttpClient } from '@angular/common/http';
 export class HomeService {
   catogory!:string;
   postUrl:string="http://localhost:3000/sendmail";
-
-  electronicServices:ServicesList = 
-    {services:[{
-    name:"A/C Repair",
+  services:ServicesList[]=[{services:[{
+    name:"AC Repair",
     img:"..\\..\\..\\..\\assets\\compressed\\ac.svg",
     background:"https://st4.depositphotos.com/1010613/24267/i/450/depositphotos_242671330-stock-photo-male-electrician-checking-air-conditioner.jpg"
   },{
@@ -26,8 +24,8 @@ export class HomeService {
     name:"Refrigirator Repair",
     img:"..\\..\\..\\..\\assets\\compressed\\fridge.svg",
     background:"https://media.istockphoto.com/id/1128872850/photo/repairman-fixing-refrigerator-with-screwdriver.jpg?s=612x612&w=0&k=20&c=F6fgkzj1e_2x-diaozUqVhHuN967oY5bmlbaO5kD5Xk="
-  }]};
-  electronicServices1:ServicesList = {
+  }],name:"Electrical and Electronic Repair"},
+  {
     services:[
       {
         name:"Electrician",
@@ -38,9 +36,8 @@ export class HomeService {
         img:"..\\..\\..\\..\\assets\\compressed\\cctv.svg",
         background:"https://t3.ftcdn.net/jpg/05/00/53/80/240_F_500538090_TOhgoTRzZVvMuqzdpimk8JZIBCB5O01Z.jpg"
       }
-    ]
-  }
-  completeHomeServices1:ServicesList ={
+    ],name:""
+  },{
     services:[{
       name:"Plumber",
       img:"..\\..\\..\\..\\assets\\compressed\\plumbing.svg",
@@ -53,9 +50,9 @@ export class HomeService {
       name:"Painter",
       img:"..\\..\\..\\..\\assets\\compressed\\painter.svg",
       background:"https://t3.ftcdn.net/jpg/01/38/71/50/240_F_138715034_3P1ZpE44DMTBcce6iOQEVZGKK5zRfRiZ.jpg"
-    }]
-  }
-  completeHomeServices2:ServicesList ={
+    }],name:"House Repair"
+  },
+  {
     services:[{
       name:"Civil Work",
       img:"..\\..\\..\\..\\assets\\compressed\\civil.svg",
@@ -64,13 +61,15 @@ export class HomeService {
       name:"Steel Work",
       img:"..\\..\\..\\..\\assets\\compressed\\welding.svg",
       background:"https://t3.ftcdn.net/jpg/04/10/03/94/240_F_410039407_8fyFaq1uSrWN9ZA5OQ7yANBwUNzcL52J.jpg"
-    }]
-  }
-  consultancyServices:Services={
-    name:"Consultancy Services",
-    img:"..\\..\\..\\..\\assets\\compressed\\consultancy.svg",
-    background:"https://static.photodexia.com/original/repository/d-enblog/01490db2605b63d90313c3378471c94565c2f4399f74c/d5a625cd1825a9dbbf3745af2d1c71777dff1b6c472a76f2b5b2cd910a7b177d_65c2f4363959b.webp"
-  }
+    }],name:""
+  },
+  {services:[
+    {
+      name:"Consultancy Services",
+      img:"..\\..\\..\\..\\assets\\compressed\\consultancy.svg",
+      background:"https://static.photodexia.com/original/repository/d-enblog/01490db2605b63d90313c3378471c94565c2f4399f74c/d5a625cd1825a9dbbf3745af2d1c71777dff1b6c472a76f2b5b2cd910a7b177d_65c2f4363959b.webp"
+    }],name:"We are Providing Consultancy Service For Entire House"}
+]
   currentCatogory$:Observable<string>;
   bookForm = new FormGroup({
     name: new FormControl(null, [Validators.required, RegexValidator(RegexConstants.Name)]),
@@ -113,5 +112,10 @@ export class HomeService {
       } 
       )
     }   
+  }
+
+  searchText!:string;
+  onKey(value:string){
+    this.searchText = value;
   }
 }
