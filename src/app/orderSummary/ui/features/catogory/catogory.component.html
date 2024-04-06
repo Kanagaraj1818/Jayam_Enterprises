@@ -1,5 +1,86 @@
-<div *ngIf="service.currentCatogory$ | async as catogory">
-    {{catogory}}
-    <input type="text" class="form-control">
-    <input type="number" class="form-control">
-</div>
+<body >
+    <div class="navbar">
+        <div>
+            <h1>
+                Just a Click 
+            </h1>
+            <h5>
+                We'll swiftly out to you within minutes
+            </h5>
+        </div>
+        <div class="d-flex justify-content-center">
+            <div *ngIf="service.currentCatogory$ | async as catogory">
+                <div *ngIf="service.load">
+                    <div class="spinner-grow text-primary" role="status">
+                        <span class="sr-only"></span>
+                      </div>
+                      <div class="spinner-grow text-secondary" role="status">
+                        <span class="sr-only"></span>
+                      </div>
+                      <div class="spinner-grow text-success" role="status">
+                        <span class="sr-only"></span>
+                      </div>
+                      <div class="spinner-grow text-danger" role="status">
+                        <span class="sr-only"></span>
+                      </div>
+                      <div class="spinner-grow text-warning" role="status">
+                        <span class="sr-only"></span>
+                      </div>
+                      <div class="spinner-grow text-info" role="status">
+                        <span class="sr-only"></span>
+                      </div>
+                      <div class="spinner-grow text-dark" role="status">
+                        <span class="sr-only"></span>
+                      </div>
+                      <div class="spinner-grow text-light" role="status">
+                        <span class="sr-only">Loading...</span>
+                      </div>
+                </div>
+                <div *ngIf="service.Response">
+                    <h1 class="color">Service Request Submitted</h1>
+                    <a href="" (click)="another = true">Submit another Request</a>
+                </div>
+                <div *ngIf="(!service.Response && !service.load) || another">
+                    <h4>Raising For <span>{{catogory}}</span></h4>           
+                </div>
+                <form action="" [formGroup]="form" (ngSubmit)="submit()" *ngIf="!service.Response && !service.load">
+                    <div>
+                        <label for="name">Name</label>
+                        <div *ngIf="!form.value.name && submitCheck">
+                            <span class="error">Enter your Name</span>
+                        </div>
+                        <div *ngIf="form.value.name && submitCheck && form.controls['name'].invalid">
+                            <span class="error">Atleast 2 Charactors</span>
+                        </div>
+                        <input type="text" class="form-control" id="name" placeholder="Enter Your Name" formControlName="name" required>
+                    </div>
+                    <div>
+                        <label for="no">Phone Number</label>
+                        <div *ngIf="!form.value.phoneNumber && submitCheck">
+                            <span class="error">Enter your mobile number</span>
+                        </div>
+                        <div *ngIf="form.value.phoneNumber && submitCheck && form.controls['phoneNumber'].invalid">
+                            <span class="error">Enter valid Mobile number</span>
+                        </div>
+                        <input type="number" class="form-control" id="no" placeholder="+91 Enter Your Mobile No" formControlName="phoneNumber">
+                    </div>
+                    <div class="submit">
+                        <button class="btn btn-danger" type="submit">Raise</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div>
+            <h1>Raise service Request</h1>
+            <h5>
+                In just 1-2 hours
+            </h5>
+            <h5>
+                We'll be right at your doorstep
+            </h5>
+        </div>
+       
+    </div>
+    
+</body>
+
