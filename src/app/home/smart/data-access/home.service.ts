@@ -1,12 +1,17 @@
 import { Injectable } from '@angular/core';
-import { Services, ServicesList } from './body-interface';
+import { Data, Post, Services, ServicesList } from './body-interface';
 import { Router } from '@angular/router';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, interval, timeInterval } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { RegexConstants, RegexValidator } from '../../../orderSummary/smart/data-access/validator';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HomeService {
+  catogory!:string;
+  postUrl:string="http://localhost:3000/sendmail";
 
   electronicServices:ServicesList = 
     {services:[{
@@ -67,19 +72,46 @@ export class HomeService {
     background:"https://static.photodexia.com/original/repository/d-enblog/01490db2605b63d90313c3378471c94565c2f4399f74c/d5a625cd1825a9dbbf3745af2d1c71777dff1b6c472a76f2b5b2cd910a7b177d_65c2f4363959b.webp"
   }
   currentCatogory$:Observable<string>;
-  constructor(private router:Router) {
+  bookForm = new FormGroup({
+    name: new FormControl(null, [Validators.required, RegexValidator(RegexConstants.Name)]),
+    phoneNumber: new FormControl(null, [Validators.required, RegexValidator(RegexConstants.phoneNumber)])
+  });
+  constructor(private router:Router,private http:HttpClient) {
     this.currentCatogory$ = new BehaviorSubject('');
     if(sessionStorage.getItem('catogory')){
       let catogory =  sessionStorage.getItem('catogory');
-      if(catogory)
-      this.currentCatogory$ = new BehaviorSubject(catogory);
+      if(catogory){
+        this.catogory = catogory;
+        this.currentCatogory$ = new BehaviorSubject(catogory);
+      }     
     }
     else router.navigateByUrl('/home');
    }
-
+   Response:boolean = false;
+   load:boolean = false;
+   
   selectedCatagory(value:string):void{
     this.currentCatogory$ = new BehaviorSubject(value);
     sessionStorage.setItem('catogory', value);
-    this.router.navigateByUrl("/order-summary");
+    this.router.navigateByUrl("/orders");
+  }
+  mailPost(name:string,number:string){
+    this.currentCatogory$.subscribe((data) => {
+      this.catogory = data
+    })
+    if(this.catogory){
+      let post:Post = {
+        name :name,
+        phoneNumber:number,
+        catogory : this.catogory
+      }
+      this.load=true;
+      this.http.post<Data>(this.postUrl, post).subscribe((data)=> {
+        if(data.accepted)
+          this.Response = true;
+           this.load=false;
+      } 
+      )
+    }   
   }
 }

@@ -6,3 +6,11 @@ export interface Services{
 export interface ServicesList{
     services:Services[];
 }
+export interface Post{
+    name:string;
+    phoneNumber:string;
+    catogory:string;
+}
+export interface Data{
+    accepted:string[];
+}

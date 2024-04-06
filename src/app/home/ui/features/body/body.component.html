@@ -1,7 +1,8 @@
-<body class="bg-dark">
+<body class="bg-light">
     <div class="container">
-      <h3 class="color d-flex justify-content-left">A COMPLETE HOME SERVICE IN YOUR TOWN</h3>
-      <h5 class="color d-flex justify-content-left">Electrical and Electronic Repairs</h5>
+      <h3 class="color d-flex justify-content-left">A COMPLETE HOME SERVICE IN YOUR TOWN ON YOUR COMFORTABLE TIME</h3>
+      <div class="navbar">
+        <h5 class="color d-flex justify-content-left form-control btn">Electrical and Electronic Repairs</h5>
         <div class="row" *ngIf="service.electronicServices as list1">
             <div class="col-sm pic" *ngFor="let services of list1.services">
               <div class="card" (click)="selectedCatagory(services.name)">
@@ -30,9 +31,12 @@
           </div>
       </div>
   </div>
+</div>
+
     </div>
+    <div class="navbar">
       <div class="container">
-        <h5 class="color d-flex justify-content-left">House Repair</h5>
+        <h5 class="color d-flex justify-content-left form-control btn">House Repair</h5>
         <div class="row" *ngIf="service.completeHomeServices1 as list">
           <div class="col-sm pic" *ngFor="let services of list.services">
             <div class="card" (click)="selectedCatagory(services.name)">
@@ -62,8 +66,10 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="navbar">
       <div class="container" *ngIf="service.consultancyServices as list">
-        <h5 class="color d-flex justify-content-left">We Providing Consultancy Service For Entire House</h5>
+        <h5 class="color d-flex justify-content-left form-control btn">We Providing Consultancy Service For Entire House</h5>
         <div class="row">
           <div class="col-sm pic">
             <div class="card" (click)="selectedCatagory(list.name)">
@@ -79,5 +85,5 @@
           </div>
         </div>
       </div>
-     
+    </div>
 </body>
