@@ -1,5 +1,5 @@
 <body class="bg-light">
-  <div class="d-flex justify-content-center">
+  <div class="d-flex container">
     <h3 class="color">A COMPLETE HOME SERVICE</h3>
     <h3 class="color">IN YOUR TOWN</h3>
     <h3 class="color">ON YOUR COMFORT TIME</h3>
@@ -8,11 +8,11 @@
     <div *ngFor="let nameList of serviceName | search: service.searchText">
       <div class="container">
         <div class="navbar">
-          <h5 class="color d-flex justify-content-left form-control btn">{{nameList.name}}</h5>
+          <h4 class="color d-flex justify-content-left form-control btn">{{nameList.name}}</h4>
           <div class="row">
               <div class="col-sm pic" *ngFor="let services of nameList.services">
                 <div class="card" (click)="selectedCatagory(services.name)">
-                  <img [src]="services.background" alt="Snow" style="width:100%
+                  <img [src]="services.background" alt="No Data Found" style="width:100%
                   ; height:100%">
                   <div class="bottom-left">
                     <div class="pad">

@@ -8,7 +8,6 @@ img{
 }
 
 .card{
-    background-color:black;
     cursor: pointer;
     color: rgba(1,160,254,255);;
     height: 15rem;
@@ -16,7 +15,7 @@ img{
 .name{
     font-size: large;
     font-weight: bold;
-    color:beige;
+    color:rgb(255, 255, 95);
 }
 .card:hover {
   transform: scale(1.1);

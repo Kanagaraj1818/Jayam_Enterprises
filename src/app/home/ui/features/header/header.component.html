@@ -12,7 +12,7 @@
         <div class="navbar">
             <a class="btn" [ngClass]="{active:router.url=='/home'}" routerLink="/home">Home</a>
             <a class="btn" routerLink="/orders" [ngClass]="{active:router.url=='/orders'}">Orders</a>
-            <a class="btn">About us</a>
+            <a class="btn" routerLink="/aboutUs" [ngClass]="{active:router.url=='/aboutUs'}">About us</a>
         </div>
         <div class="navbar">   
             <input class="form-control" type="text" placeholder="Search" aria-label="Search" (keyup)="onKey($event)">
